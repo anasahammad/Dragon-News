@@ -14,7 +14,7 @@ const LeftSideNav = () => {
         .then(res => res.json())
         .then(data => setCategories(data))
     }, [])
-    console.log(categories);
+    // console.log(categories);
     return (
         <div>
             <div>
