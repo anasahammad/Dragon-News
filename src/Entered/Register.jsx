@@ -1,17 +1,20 @@
 
 import { useContext, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../authprovider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
+import Navbar from '../pages/shared/Navbar';
+import { updateProfile } from "firebase/auth";
 const Register = () => {
   const [show, setShow] = useState(false)
   const [success, setSuccess] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [accept, setAccept] = useState(false)
   const registerRef = useRef(null)
-
+  const navigate = useNavigate()
   const {createUser, emailVerify} = useContext(AuthContext);
+  
+  
   const handleRegister = event=> {
     event.preventDefault();
     // console.log(event.currentTarget);
@@ -47,6 +50,17 @@ const Register = () => {
       emailVerify()
       .then(()=>{
          alert("Please check your email and verify your account");
+         navigate("/login");
+      })
+      updateProfile(result.user, {
+        displayName: name,
+        photoURL: "url"
+      })
+      .then(()=>{
+        alert("Profile Updated")
+      })
+      .catch(error=>{
+        console.log(error.message);
       })
     })
     .catch(error=>{
@@ -68,7 +82,11 @@ const disableBtn = ()=>{
   }
   }
     return (
+      
         <div className=" max-w-6xl mx-auto">
+          <div>
+          <Navbar/>
+          </div>
   <div className="  flex-col ">
     <div className="text-center ">
       <h1 className="text-4xl font-bold">Register your account</h1>

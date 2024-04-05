@@ -18,10 +18,10 @@ const LeftSideNav = () => {
     return (
         <div>
             <div>
-                <h2 className="text-2xl">All Caterogy</h2>
+                <h2 className="lg:text-2xl">All Caterogy</h2>
                 <div className="text-left">
                 {
-                    categories.map(category => <NavLink className="block px-10 py-4 hover:bg-gray-300 text-xl text-[#9F9F9F] hover:text-black hover:font-bold" key={category.id} to={`/category/&{category.id}`}>{category.name}</NavLink>)
+                    categories.map(category => <NavLink className="block lg:px-10 lg:py-4 hover:bg-gray-300 lg:text-xl text-[#9F9F9F] hover:text-black hover:font-bold" key={category.id} to={`/category/&{category.id}`}>{category.name}</NavLink>)
                 }
                 </div>
 
@@ -29,10 +29,10 @@ const LeftSideNav = () => {
                 <div className="card rounded-[5px] card-compact  bg-base-100 shadow-xl">
   <figure><img src={photo1} alt="Shoes" /></figure>
   <div className="py-5 px-2">
-    <h2 className="text-left font-bold text-xl text-[#403F3F]">Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
-    <div className="flex items-center gap-4 mt-4">
+    <h2 className="text-left font-bold text-[12px] lg:text-xl text-[#403F3F]">Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
+    <div className="flex flex-col lg:flex-row items-center gap-4 mt-4">
         <p className="text-[#403F3F] font-bold">Sports</p>
-        <p className="flex items-center gap-2 text-[#9F9F9F]"><CiCalendar/> {moment().format("MMM D, YYYY")}</p>
+        <p className="flex flex-col lg:flex-row items-center gap-2 text-[#9F9F9F]"><CiCalendar/> {moment().format("MMM D, YYYY")}</p>
     </div>
    
   </div>
@@ -40,10 +40,10 @@ const LeftSideNav = () => {
                 <div className="card rounded-[5px] card-compact  bg-base-100 shadow-xl">
   <figure><img src={photo2} alt="Shoes" /></figure>
   <div className="py-5 px-2">
-    <h2 className="text-left font-bold text-xl text-[#403F3F]">Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
-    <div className="flex items-center gap-4 mt-4">
+    <h2 className="text-left font-bold text-[12px] lg:text-xl text-[#403F3F]">Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
+    <div className="flex flex-col lg:flex-row items-center gap-4 mt-4">
         <p className="text-[#403F3F] font-bold">Sports</p>
-        <p className="flex items-center gap-2 text-[#9F9F9F]"><CiCalendar/> {moment().format("MMM D, YYYY")}</p>
+        <p className="flex flex-col lg:flex-row items-center gap-2 text-[#9F9F9F]"><CiCalendar/> {moment().format("MMM D, YYYY")}</p>
     </div>
    
   </div>
@@ -51,10 +51,10 @@ const LeftSideNav = () => {
                 <div className="card rounded-[5px] card-compact  bg-base-100 shadow-xl">
   <figure><img src={photo3} alt="Shoes" /></figure>
   <div className="py-5 px-2">
-    <h2 className="text-left font-bold text-xl text-[#403F3F]">Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
-    <div className="flex items-center gap-4 mt-4">
+    <h2 className="text-left font-bold text-[12px] lg:text-xl text-[#403F3F]">Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
+    <div className="flex flex-col lg:flex-ro items-center gap-4 mt-4">
         <p className="text-[#403F3F] font-bold">Sports</p>
-        <p className="flex items-center gap-2 text-[#9F9F9F]"><CiCalendar/> {moment().format("MMM D, YYYY")}</p>
+        <p className="flex  flex-col lg:flex-roitems-center gap-2 text-[#9F9F9F]"><CiCalendar/> {moment().format("MMM D, YYYY")}</p>
     </div>
    
   </div>

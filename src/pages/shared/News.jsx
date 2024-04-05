@@ -20,8 +20,8 @@ const {author, _id, thumbnail_url, details, rating, total_view} = news;
 
     return (
         <div className="w-full">
-            <div   className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
-                <div className="flex justify-between items-center bg-[#F3F3F3] p-4">
+            <div   className="flex flex-col p-2 lg:p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+                <div className="flex justify-between items-center bg-[#F3F3F3] lg:p-4">
                     <div className="flex space-x-4 ">
                         
                     <img alt="" src={author.img} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
@@ -35,13 +35,13 @@ const {author, _id, thumbnail_url, details, rating, total_view} = news;
                     
                     <div>
                         <p className="flex gap-2 items-center ">
-                            <CiBookmark className="h-[24px] w-[24px]"/>
-                            <CiShare2 className="h-[24px] w-[24px]"/>
+                            <CiBookmark className="lg:h-[24px] lg:w-[24px]"/>
+                            <CiShare2 className="lg:h-[24px] lg:w-[24px]"/>
                         </p>
                     </div>
                 </div>
                 <div>
-                <h2 className="text-xl text-[#403F3F] font-bold hover:underline mb-5">{news.title}</h2>
+                <h2 className="lg:text-xl text-[#403F3F] font-bold hover:underline mb-5">{news.title}</h2>
                     <img src={thumbnail_url} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
                    
                    {

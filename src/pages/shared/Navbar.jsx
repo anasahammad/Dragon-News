@@ -1,13 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import userImg from "../../assets/user.png"
+import { useContext } from "react";
+import { AuthContext } from "../../authprovider/AuthProvider";
 
 const Navbar = () => {
+  const {logOut, user} = useContext(AuthContext)
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/register">Career</NavLink></li>
         
     </>
+
+    const handleLogout = ()=>{
+      logOut(()=>{
+       return alert("Logout successful")
+
+      })
+      .catch(error=>{
+       return alert(error.message)
+      })
+    }
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -30,12 +43,17 @@ const Navbar = () => {
  
   <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src={userImg} />
+          <img alt="Tailwind CSS Navbar component" src={user?.photoURL ? user.photoURL :userImg} />
         </div>
       </div>
-   <Link to="/login">
+      {
+        user ?  
+        <button onClick={handleLogout} className="btn">Log out</button>  : <Link to="/login">
         <button className="btn">Login</button>
    </Link>
+  
+      }
+   
   </div>
 </div>
     );
