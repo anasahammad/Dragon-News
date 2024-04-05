@@ -9,7 +9,8 @@ const [success, setSuccess] = useState("")
 const [errorMessage, setErrorMessage] = useState("")
 const emailRef = useRef(null)
 const navigate = useNavigate()
-// const location = useLocation()
+const location = useLocation()
+
     const {logIn, resetPassword, googleLogin, twitterLogin} = useContext(AuthContext)
     
     const handleLogin = (event)=>{
@@ -25,7 +26,7 @@ const navigate = useNavigate()
         logIn(email, password)
         .then(()=>{
             setSuccess("Login successful")
-            navigate("/")
+            navigate(location?.state ? location.state : "/")
         })
         .catch(error=>{
             setErrorMessage(error.message)
@@ -50,7 +51,7 @@ const navigate = useNavigate()
         googleLogin()
         .then(()=>{
             // setSuccess("Login successful")
-            navigate("/")
+            navigate(location?.state ? location.state : "/")
         })
         .catch(error=>{
             setErrorMessage(error.message)
@@ -61,7 +62,7 @@ const navigate = useNavigate()
         twitterLogin()
         .then(()=>{
             // setSuccess("Login successful")
-            navigate("/")
+            navigate(location?.state ? location.state : "/")
         })
         .catch(error=>{
             setErrorMessage(error.message)

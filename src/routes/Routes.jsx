@@ -6,6 +6,8 @@ import Career from "../pages/Career";
 import Login from "../Entered/Login";
 import NewsDetails from "../pages/NewsDetails";
 import Register from "../Entered/Register";
+import PrivateRoute from "./PrivateRoute";
+
 
 export const router = createBrowserRouter([
     {
@@ -19,7 +21,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/news/:id",
-          element: <NewsDetails/>,
+          element: <PrivateRoute><NewsDetails/></PrivateRoute> ,
           loader: ()=> fetch("/news.json")
         },
         {
