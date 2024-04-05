@@ -16,16 +16,19 @@ const LeftSideNav = () => {
     }, [])
     // console.log(categories);
     return (
-        <div>
-            <div>
-                <h2 className="lg:text-2xl">All Caterogy</h2>
+        <div className="flex-col">
+            <div className="p-6 lg:p-2">
+                <h2 className="text-2xl">All Caterogy</h2>
+                <div className="">
+
+                
                 <div className="text-left">
                 {
-                    categories.map(category => <NavLink className="block lg:px-10 lg:py-4 hover:bg-gray-300 lg:text-xl text-[#9F9F9F] hover:text-black hover:font-bold" key={category.id} to={`/category/&{category.id}`}>{category.name}</NavLink>)
+                    categories.map(category => <NavLink className="block px-10 py-2 lg:py-4 hover:bg-gray-300 lg:text-xl text-[#9F9F9F] hover:text-black hover:font-bold" key={category.id} to={`/category/&{category.id}`}>{category.name}</NavLink>)
                 }
                 </div>
 
-                <div className="grid grid-cols-1 py-6">
+                <div className="grid  gap-3 lg:grid-cols-1  py-6  ">
                 <div className="card rounded-[5px] card-compact  bg-base-100 shadow-xl">
   <figure><img src={photo1} alt="Shoes" /></figure>
   <div className="py-5 px-2">
@@ -60,7 +63,7 @@ const LeftSideNav = () => {
   </div>
 </div>
                 </div>
-               
+                </div>
             </div>
         </div>
     );

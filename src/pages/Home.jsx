@@ -18,11 +18,11 @@ const Home = () => {
             <BreakingNews/>
             <Navbar/>
            
-            <div className="grid grid-cols-3 md:grid-cols-4 gap-6 w-full">
+            <div className="md:grid  md:grid-cols-4 gap-6 w-full">
                 <div className="">
                     <LeftSideNav/>
                 </div>
-                <div className="col-span-2 md:col-span-2 border">
+                <div className=" md:col-span-2 border">
                     {
                        allNews.map(news=> <News key={news._id} news={news}></News>) 
                     }
